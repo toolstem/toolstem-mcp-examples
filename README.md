@@ -4,15 +4,18 @@ Working, minimal examples of calling the [Toolstem MCP Server](https://apify.com
 
 Toolstem exposes three tools — `get_stock_snapshot`, `get_company_metrics`, and `compare_companies` — as a hosted Model Context Protocol server with pay-per-call billing. No subscription, no API keys to manage, no glue code between vendor endpoints.
 
-**MCP endpoint:** `https://mcp.apify.com/?tools=toolstem/toolstem-mcp-server`
+**Hosted endpoints:**
+- Direct x402 (no signup, agent's wallet pays per call): `https://mcp.toolstem.com/mcp/finance` and `https://mcp.toolstem.com/mcp/sec`
+- Apify-hosted (Apify token): `https://mcp.apify.com/?tools=toolstem/toolstem-mcp-server`
 
 ## What's in this repo
 
-| Directory | What it shows | Lines of code |
-|---|---|---|
-| [`claude-desktop/`](claude-desktop/) | Claude Desktop configuration to add Toolstem as an MCP server | ~15 |
-| [`openai-agents-sdk/`](openai-agents-sdk/) | OpenAI Agents SDK calling `compare_companies` as a hosted tool | ~40 |
-| [`langchain/`](langchain/) | LangChain agent using Toolstem via `langchain-mcp-adapters` | ~50 |
+| Directory | What it shows | Auth | Language |
+|---|---|---|---|
+| [`langchain-x402-typescript/`](langchain-x402-typescript/) | LangChain.js + Toolstem via **x402 micropayments** — agent's own wallet pays $0.01/call. Runnable in 60 seconds. | x402 (USDC on Base) | TypeScript |
+| [`langchain/`](langchain/) | LangChain (Python) using `langchain-mcp-adapters` via Apify-hosted endpoint | Apify token | Python |
+| [`openai-agents-sdk/`](openai-agents-sdk/) | OpenAI Agents SDK calling `compare_companies` as a hosted tool | Apify token | Python |
+| [`claude-desktop/`](claude-desktop/) | Claude Desktop configuration to add Toolstem as an MCP server | x402 or Apify | JSON config |
 
 Each example is self-contained: one file, runs as-is after setting environment variables, no framework configuration beyond what the framework itself requires.
 

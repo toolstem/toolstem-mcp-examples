@@ -6,3 +6,8 @@ venv/
 *.log
 .DS_Store
 node_modules/
+
+# x402 typescript example
+langchain-x402-typescript/node_modules/
+langchain-x402-typescript/package-lock.json
+langchain-x402-typescript/dist/

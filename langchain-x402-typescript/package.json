@@ -1,0 +1,25 @@
+{
+  "name": "toolstem-langchain-x402-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LangChain.js + Toolstem MCP via x402 micropayments. No Apify account, no API key, agent's own wallet pays per call.",
+  "scripts": {
+    "proxy": "tsx x402-proxy.ts",
+    "finance": "tsx finance-demo.ts",
+    "sec": "tsx sec-demo.ts"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/langgraph": "^0.2.0",
+    "@langchain/mcp-adapters": "^0.6.0",
+    "@langchain/openai": "^0.3.0",
+    "viem": "^2.21.0",
+    "x402-fetch": "^0.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}
