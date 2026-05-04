@@ -17,6 +17,14 @@ Toolstem exposes three tools — `get_stock_snapshot`, `get_company_metrics`, an
 | [`openai-agents-sdk/`](openai-agents-sdk/) | OpenAI Agents SDK calling `compare_companies` as a hosted tool | Apify token | Python |
 | [`claude-desktop/`](claude-desktop/) | Claude Desktop configuration to add Toolstem as an MCP server | x402 or Apify | JSON config |
 
+### Want a one-line install for LangChain.js?
+
+```bash
+npm install langchain-toolstem
+```
+
+Native wrapper package: [`langchain-toolstem`](https://www.npmjs.com/package/langchain-toolstem) ([source](https://github.com/toolstem/langchain-toolstem)). Three exports — `createFinanceTools()`, `createSecTools()`, `createX402Proxy()` — skip the proxy boilerplate from the example above and just import the tools directly into your LangGraph agent.
+
 Each example is self-contained: one file, runs as-is after setting environment variables, no framework configuration beyond what the framework itself requires.
 
 ## Quick start
